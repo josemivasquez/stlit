@@ -51,7 +51,7 @@ with col_f:
 with col_l:
     a, b, c = st.columns([1, 1, 1])
     with b:
-        st.image("https://airmajoro.com/wp-content/uploads/2024/02/AirMajoro_Regional-removebg-preview-e1765637083392.png", width=400)
+        st.image("logo.png", width=400)
 
 df_filtered = df_master[df_master['anio'] == selected_year]
 
