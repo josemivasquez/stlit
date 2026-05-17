@@ -1,0 +1,6 @@
+id_aeronave,modelo,capacidad,tipo
+N12345,Boeing 737-800,189,Pasajeros
+N67890,Airbus A320,150,Pasajeros
+N555CC,Boeing 737-F,0,Carga
+N222RR,Embraer 190,114,Regional
+N999XX,Cessna Citation,8,Ejecutivo

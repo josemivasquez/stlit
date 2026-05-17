@@ -1,0 +1,7 @@
+id_tipo_costo,categoria,naturaleza
+C01,Combustible,Variable
+C02,Mantenimiento,Semi-Fijo
+C03,Tasas Aeroportuarias,Variable
+C04,Tripulación,Fijo
+C05,Catering/Servicios,Variable
+C06,Seguros,Fijo
