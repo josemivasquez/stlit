@@ -4,6 +4,20 @@ import plotly.express as px
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 
+import os
+import subprocess
+import sys
+
+# Intento de instalación forzada al iniciar la app
+try:
+    import plotly
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "plotly"])
+    import plotly
+
+import plotly.express as px # Ahora ya debería funcionar
+import streamlit as st
+
 # 1. CONFIGURACIÓN DE PÁGINA
 st.set_page_config(page_title="AirMajoro Dashboard", layout="wide")
 
