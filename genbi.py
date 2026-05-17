@@ -5,12 +5,6 @@ import os
 import subprocess
 import sys
 
-# Intento de instalación forzada al iniciar la app
-try:
-    import plotly
-except ImportError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "plotly"])
-    import plotly
 
 import plotly.graph_objects as go
 import plotly.express as px # Ahora ya debería funcionar
