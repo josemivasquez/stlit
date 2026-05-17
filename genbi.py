@@ -1,7 +1,5 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 
 import os
@@ -15,6 +13,7 @@ except ImportError:
     subprocess.check_call([sys.executable, "-m", "pip", "install", "plotly"])
     import plotly
 
+import plotly.graph_objects as go
 import plotly.express as px # Ahora ya debería funcionar
 import streamlit as st
 
