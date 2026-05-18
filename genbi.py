@@ -42,39 +42,37 @@ def load_data():
 df_master = load_data()
 
 
-col_t, col_f, col_l = st.columns([1, 1, 1])
+col_t, col_l = st.columns([1, 1])
 with col_t:
-    st.title("Dashboard de ingresos")
-with col_f:
-    years = sorted(df_master['anio'].unique(), reverse=True)
-    selected_year = st.selectbox("Year", years)
+    st.markdown(
+        '''
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+        <h1 style="color:#2570bb; font-family: Poppins, 'Poppins Fallback', sans-serif;">Dashboard de ingresos</h1>
+        ''',
+        unsafe_allow_html=True,
+    )
+
 with col_l:
     a, b, c = st.columns([1, 1, 1])
     with b:
         st.image("logo.png", width=400)
 
-df_filtered = df_master[df_master['anio'] == selected_year]
+
 
 # FILA DE INDICADORES
 k1, k2, g1, g2, k3 = st.columns([1, 1, 1, 1, 1])
+
+with g2:
+    years = sorted(df_master['anio'].unique(), reverse=True)
+    selected_year = st.selectbox("Year", years)
+
+df_filtered = df_master[df_master['anio'] == selected_year]
 
 ing_total = df_filtered['ingreso_bruto'].sum()
 tix_total = df_filtered['unidades_vendidas'].sum()
 util_total = df_filtered['utilidad'].sum()
 tkt_prom = ing_total / tix_total if tix_total > 0 else 0
 rentab = (util_total / ing_total) * 100 if ing_total > 0 else 0
-
-st.markdown("""
-    <style>
-    html, body {
-    margin: 0 !important;
-    padding: 0 !important;
-    height: 100% !important;
-    overflow-y: hidden !important; /* Deshabilita el scroll vertical */
-    overflow-x: hidden !important; /* Opcional: Deshabilita el scroll horizontal */
-    }
-    </style>
-    """, unsafe_allow_html=True)
 
 st.markdown("""
     <style>
